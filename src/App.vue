@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <ClickToTeleport to="top.right">
+      Content
+  </ClickToTeleport>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import ClickToTeleport from './components/ClickToTeleport.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { ClickToTeleport }
 }
 </script>
