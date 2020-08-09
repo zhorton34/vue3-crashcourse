@@ -1,5 +1,5 @@
 <template>
-    <button @click="open = true">
+    <button @click="open = true" class="m-2">
         {{ label }}
     </button>
 
