@@ -1,4 +1,4 @@
-# Vue3 Crash Course
+# Vue3 Crash Course ([Git Repo](https://github.com/zhorton34/vue3-crashcourse))
 
 ## Pre-requisites
 - Npm
