@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+    <ClickToTeleport to="right" label="Teleport To Right Drawer">
+        Right Drawer Content
+    </ClickToTeleport>
+
+    <ClickToTeleport to="left" label="Teleport To Left Drawer">
+        Left Drawer Content
+    </ClickToTeleport>
+
+    <ClickToTeleport to="full" label="Teleport To Full Screen">
+        Full Screen Modal Content
+    </ClickToTeleport>
+
+    <ClickToTeleport to="top.right" label="Teleport To Top Right">
+        Top Right Content
+    </ClickToTeleport>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import ClickToTeleport from './components/ClickToTeleport.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { ClickToTeleport }
 }
 </script>
