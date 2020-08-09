@@ -3,6 +3,8 @@
         {{ label }}
     </button>
 
+    <hr><br>
+
     <teleport to="body">
         <div v-if="open" :style="portal[to]">
             <div class="modal">
