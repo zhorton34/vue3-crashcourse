@@ -18,42 +18,6 @@
 ### Section 3: Teleport (Portal's)
 - We use [Tailwind's CDN](https://tailwindcss.com/docs/installation/#using-tailwind-via-cdn)
 
-### Section 4: [Composition Api](https://composition-api.vuejs.org/)
-- [Options Api vs. Composition Api (Code Organization)](https://composition-api.vuejs.org/#code-organization)
-- ref vs. reactively 
-- Logic extraction and reuse
+### Section 4: Multiple V-Model Bindings
 
-
-### Section 5: Change Detection
-
-### Section 6: Multiple v-models
-
-### Section 7: Global Api Changes
-
-### Section 8: Options Api to Composition Api (Data)
-- data
-- props
-- computed
-- methods
-- watch
-
-### Section 10: Options Api to Composition Api (DOM)
-- el
-- template
-- render
-- renderError
-
-### Section 11: Options Api to Composition Api (Lifecycle Hooks)
-- beforeCreate
-- created
-- beforeMount
-- mounted
-- beforeUpdate
-- updated
-- beforeDestroy
-- destroyed
-
-
-### Resources
-- [Vue 3 Cheatsheet (vuemastery.com)](https://www.vuemastery.com/download-vue3)
-- [Composition Api Docs (Vuejs.org)](https://composition-api.vuejs.org/)
+### Section 5: Reactivity Updates
