@@ -1,6 +1,4 @@
 <template>
-    <h1 class="text-4xl">Teleport</h1>
-    <hr>
     <div class="flex justify-center">
         <ClickToTeleport to="right" label="Teleport To Right Drawer">
             Right Drawer Content
@@ -18,8 +16,6 @@
             Top Right Content
         </ClickToTeleport>
     </div>
-    <hr>
-    <br>
 </template>
 
 <script>

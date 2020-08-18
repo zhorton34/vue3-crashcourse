@@ -1,47 +1,72 @@
 <template>
-    <Teleportation />
+    <div :class="classes.sections.navigator">
+        <template v-for="section in sections" >
+            <button @click="show(section)" :class="classes.sections.btn" :disabled="section.show">
+                <small>{{ section.title }}</small>
+            </button>
+        </template>
+    </div>
 
-    <h1 class="text-4xl">Multiple v-model Bindings</h1>
-    <hr>
-    <VModelMultiplied
-        v-model:name="building.name"
-        v-model:units="building.units"
-        v-model:height="building.height"
-        v-model:location="building.location"
-    />
-    <br><hr>
-    <i>
-        "Located in {{ building.location }}, the {{ building.name }} stands {{ building.height }} {{ building.units }} tall."
-    </i>
-    <hr>
+    <h1 :class="classes.sections.title">
+        {{ active.title }} Example
+    </h1>
 
-    <div class="flex justify-center">
-        <button class="m-2" @click="building.name = ''">Clear Building Name</button>
-        <button class="m-2" @click="building.units = ''">Clear Building Units</button>
-        <button class="m-2" @click="building.height = ''">Clear Building Height</button>
-        <button class="m-2" @click="building.location = ''">Clear Building Location</button>
+    <div :class="classes.sections.container">
+        <section v-is="active.component" />
     </div>
 </template>
 
 <script>
     import Teleportation from './sections/Teleportation.vue'
-    import VModelMultiplied from './components/VModelMultiplied.vue'
+    import ReactiveDetection from './sections/ReactiveDetection.vue'
+    import MultipleVModelBindings from './sections/MultipleVModelBindings.vue'
 
     export default {
         name: 'App',
 
         data: () => ({
-            building: {
-                name: 'Empire State Building',
-                location: 'New York, New York',
-                height: '100',
-                units: 'stories',
-            }
+            classes: {
+                sections: {
+                    btn: 'w-full bg-blue-600 shadow-outline',
+                    title: 'text-gray-600 font-light pt-16 text-6xl',
+                    navigator: 'flex fixed justify-start -mt-16 w-full z-10',
+                    container: 'border-gray-400 bg-white p-12 m-24 rounded shadow-2xl border-gray-600',
+
+                }
+            },
+            sections: [
+                {
+                    id: 0,
+                    show: true,
+                    title: 'Teleportation',
+                    component: Teleportation,
+                },
+                {
+                    id: 1,
+                    show: false,
+                    title: 'Multiple V Model Bindings',
+                    component: MultipleVModelBindings,
+                },
+                {
+                    id: 2,
+                    show: false,
+                    title: 'Reactivity Updates',
+                    component: ReactiveDetection,
+                }
+            ]
         }),
 
-        components: {
-            Teleportation,
-            VModelMultiplied,
+        computed: {
+            active: $this => $this.sections.find(({ show }) => show)
+        },
+
+        methods: {
+            show(section) {
+                this.sections = this.sections.map(item => ({
+                    ...item,
+                    show: section.id === item.id,
+                }))
+            }
         }
     }
 </script>
