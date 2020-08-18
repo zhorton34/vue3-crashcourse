@@ -21,3 +21,5 @@
 ### Section 4: Multiple V-Model Bindings
 
 ### Section 5: Reactivity Updates
+
+### Section 6: Filters Removed in Vue 3

@@ -17,6 +17,7 @@
 </template>
 
 <script>
+    import NoMoreFilters from './sections/NoMoreFilters.vue'
     import Teleportation from './sections/Teleportation.vue'
     import ReactiveDetection from './sections/ReactiveDetection.vue'
     import MultipleVModelBindings from './sections/MultipleVModelBindings.vue'
@@ -52,6 +53,12 @@
                     show: false,
                     title: 'Reactivity Updates',
                     component: ReactiveDetection,
+                },
+                {
+                    id: 3,
+                    show: false,
+                    title: 'Filters Removed',
+                    component: NoMoreFilters,
                 }
             ]
         }),
